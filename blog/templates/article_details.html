@@ -1,0 +1,18 @@
+  
+{% extends 'layout.html' %}
+  <title>
+    {% block title %}
+      {{ post.title_tag }}
+    {% endblock %}
+  </title>
+  
+  {% block content %}
+    <section class="main-card bg-white"> 
+      <h1>{{ post.title }}</h1>
+      </a>
+      <h3>{{ post.author.first_name }} - {{ post.author.last_name }}</h3>
+      <h6>{{ post.author.email }}</h6>
+      <p>{{ post.body }}</p>
+      <a href="{% url 'home' %}" class="btn btn-primary mt-5 px-5 py-3 fw-bold">Back</a>
+    </section>
+  {% endblock %}

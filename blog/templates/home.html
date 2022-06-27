@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+    {% block content %}
+
+        {% for post in object_list %}
+            <div class="border border-1 p-5 my-5 bg-white shadow"> 
+                    <a href="{% url 'article_details' post.pk %}">
+                    <h1>{{ post.title }}</h1>
+                    </a>
+                    <h3>{{ post.author.first_name}} - {{ post.author.last_name }}</h3>
+                    <h6>{{ post.author.email }}</h6>
+                    <p>{{ post.body }}</p>
+            </div>
+        {% endfor %}
+
+    {% endblock %}

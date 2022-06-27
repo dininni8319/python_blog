@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+    {% block content %}
+
+    <title>
+      {% block title %}
+        Create A new Blog Post!
+      {% endblock %}
+    </title>
+
+    <div class="form-group">
+      <form method="POST" class="bg-white p-5 rounded">
+          <h2>Add Blog Post!</h2>
+          <br/> <br/>
+          <!-- #help to protect your form from hacker, creates a unique key. -->
+          {% csrf_token %}  
+  
+          {{ form.as_p }}
+  
+          <button class="btn btn-secondary w-100 fw-bold">Post</button>
+        </form>
+      </div>
+    {% endblock %}
