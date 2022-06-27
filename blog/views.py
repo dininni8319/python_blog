@@ -1,5 +1,5 @@
 from django.shortcuts import render 
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from .models import Post
 from .forms import PostForm
 # def home(request):
@@ -22,6 +22,10 @@ class AddPostView(CreateView):
     #python list, here you can decide to leave some fields
     # fields = ('title', 'body')
 
+class UpdatePostView(UpdateView):
+    model = Post
+    template_name = 'update.html'
+    fields = ['title', 'title_tag', 'body']
 
 
 
